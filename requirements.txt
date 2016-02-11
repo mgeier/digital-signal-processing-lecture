@@ -1,0 +1,3 @@
+nbsphinx
+ipykernel
+sphinx-bootstrap-theme
