@@ -6,4 +6,4 @@ dependencies:
   - nbconvert
   - ipykernel
   - pip:
-    - nbsphinx
+    - "git+https://github.com/spatialaudio/nbsphinx.git@save-rst"
