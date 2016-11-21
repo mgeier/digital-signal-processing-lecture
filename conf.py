@@ -36,7 +36,7 @@ extensions = [
     'sphinx.ext.mathjax',
 ]
 
-nbsphinx_save_rst = True
+nbsphinx_save_notebooks = True
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
