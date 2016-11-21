@@ -1,5 +1,6 @@
 name: bla
 channels:
+  - defaults
   - conda-forge
 dependencies:
   - python>=3
