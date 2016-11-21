@@ -1,6 +1,9 @@
+channels:
+  - conda-forge
 dependencies:
   - python>=3
   - sphinx>=1.3
+  - pandoc
   - nbconvert
   - ipykernel
   - pip:
