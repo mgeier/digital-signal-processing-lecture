@@ -22,6 +22,10 @@ print(pandoc(
     '<audio src="http://example.com/bla.ogg" controls>not available</audio>',
     'markdown', 'rst'))
 print('#' * 80)
+print(pandoc(
+    'abc\n<audio src="http://example.com/bla.ogg" controls>not available</audio>\nxyz',
+    'markdown', 'rst'))
+print('#' * 80)
 
 #import sphinx_bootstrap_theme
 
