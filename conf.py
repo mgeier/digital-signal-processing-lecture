@@ -15,19 +15,8 @@
 
 import sys
 import os
-from nbsphinx import pandoc
 
-print('#' * 80)
-print(pandoc(
-    '<audio src="http://example.com/bla.ogg" controls>not available</audio>',
-    'markdown', 'rst'))
-print('#' * 80)
-print(pandoc(
-    'abc\n<audio src="http://example.com/bla.ogg" controls>not available</audio>\nxyz',
-    'markdown', 'rst'))
-print('#' * 80)
-
-#import sphinx_bootstrap_theme
+import guzzle_sphinx_theme
 
 # If extensions (or modules to document with autodoc) are in another directory,
 # add these directories to sys.path here. If the directory is relative to the
@@ -45,6 +34,7 @@ print('#' * 80)
 extensions = [
     'nbsphinx',
     'sphinx.ext.mathjax',
+    'guzzle_sphinx_theme',
 ]
 
 nbsphinx_save_notebooks = True
@@ -125,25 +115,20 @@ todo_include_todos = False
 
 # The theme to use for HTML and HTML Help pages.  See the documentation for
 # a list of builtin themes.
-#html_theme = 'bootstrap'
+html_theme = 'guzzle_sphinx_theme'
 
-## Theme options are theme-specific and customize the look and feel of a theme
-## further.  For a list of options available for each theme, see the
-## documentation.
-#html_theme_options = {
-#    'navbar_title': 'DSP',
-#    'navbar_site_name': 'Chapters',
-#    'navbar_pagenav_name': 'This Page',
-#    'navbar_fixed_top': 'false',
-#    'source_link_position': 'none',
-#    'bootswatch_theme': 'cosmo',
-#    #'bootswatch_theme': 'lumen',
-#    #'bootswatch_theme': 'sandstone',
-#    #'bootswatch_theme': 'spacelab',
-#}
-#
-## Add any paths that contain custom themes here, relative to this directory.
-#html_theme_path = sphinx_bootstrap_theme.get_html_theme_path()
+# Adds an HTML table visitor to apply Bootstrap table classes
+html_translator_class = 'guzzle_sphinx_theme.HTMLTranslator'
+
+# Theme options are theme-specific and customize the look and feel of a theme
+# further.  For a list of options available for each theme, see the
+# documentation.
+html_theme_options = {
+    'project_nav_name': project,
+}
+
+# Add any paths that contain custom themes here, relative to this directory.
+html_theme_path = guzzle_sphinx_theme.html_theme_path()
 
 # The name for this set of Sphinx documents.  If None, it defaults to
 # "<project> v<release> documentation".
